@@ -78,11 +78,11 @@ const Switchboard = () => {
                 </Button>
               </div>
               
-              {/* Image section */}
+              {/* Image section - Changed to a different educational image */}
               <div className="hidden md:block">
                 <img 
-                  src="/lovable-uploads/29ce6e36-79f6-46f6-9ee3-6d0329415d10.png" 
-                  alt="AIT Students and Faculty" 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                  alt="Educational Technology" 
                   className="w-64 h-auto rounded"
                 />
               </div>
