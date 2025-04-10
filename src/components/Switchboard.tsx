@@ -112,7 +112,7 @@ const Switchboard = () => {
                 </li>
               </ul>
               
-              <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Manage and Grow Your Business</h2>
+              <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Support and Services for AIT Staff</h2>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
