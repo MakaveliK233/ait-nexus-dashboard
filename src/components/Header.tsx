@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from './ui/dropdown-menu';
+import { Card } from './ui/card';
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
@@ -65,15 +66,27 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Secondary navigation */}
-        <div className="flex items-center justify-between px-4 py-1">
-          <nav className="flex">
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Personal Info</a>
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Federal</a>
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Campus</a>
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Deductions</a>
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Courses</a>
-            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Files</a>
+        {/* Secondary navigation - Updated to use cards */}
+        <div className="flex items-center justify-between px-4 py-2">
+          <nav className="flex gap-2 py-1 overflow-x-auto">
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Personal Info</a>
+            </Card>
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Federal</a>
+            </Card>
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Campus</a>
+            </Card>
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Deductions</a>
+            </Card>
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Courses</a>
+            </Card>
+            <Card className="bg-white/10 border-white/10 hover:bg-white/20 transition-colors duration-200">
+              <a href="#" className="px-4 py-2 text-white font-medium text-sm block">Files</a>
+            </Card>
           </nav>
           <div className="hidden md:flex items-center gap-2">
             <div className="relative w-48">
