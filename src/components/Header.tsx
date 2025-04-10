@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bell, Moon, Search, Sun, User } from 'lucide-react';
+import { Bell, Moon, Search, Sun, User, HelpCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { 
@@ -19,30 +19,25 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900 border-b sticky top-0 z-30">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+    <header className="bg-gradient-to-r from-ait-blue to-ait-teal text-white sticky top-0 z-30">
+      <div className="container mx-auto">
+        {/* Top navigation bar */}
+        <div className="flex items-center justify-between px-4 py-2 border-b border-white/20">
           <div className="flex items-center gap-2">
-            <div className="font-heading font-bold text-2xl text-ait-blue">
-              AIT<span className="text-ait-teal">NEXUS</span>
+            <div className="font-heading font-bold text-2xl">
+              AIT<span className="text-white">NEXUS</span>
             </div>
-            <div className="text-sm font-medium bg-ait-blue/10 text-ait-blue px-2 py-0.5 rounded">
+            <div className="text-sm font-medium bg-white/10 px-2 py-0.5 rounded">
               Information System
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-3 flex-1 max-w-md mx-6">
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
+          <div className="flex items-center gap-2">            
+            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <HelpCircle className="h-5 w-5" />
+            </Button>
+            
+            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={toggleDarkMode}>
               {isDarkMode ? (
                 <Sun className="h-5 w-5" />
               ) : (
@@ -50,14 +45,14 @@ const Header = () => {
               )}
             </Button>
             
-            <Button variant="ghost" size="icon" className="relative">
+            <Button variant="ghost" size="icon" className="relative text-white hover:bg-white/10">
               <Bell className="h-5 w-5" />
-              <span className="absolute top-1 right-1 h-2.5 w-2.5 bg-ait-red rounded-full"></span>
+              <span className="absolute top-1 right-1 h-2.5 w-2.5 bg-red-500 rounded-full"></span>
             </Button>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="border rounded-full overflow-hidden">
+                <Button variant="ghost" size="icon" className="border border-white/20 rounded-full overflow-hidden text-white hover:bg-white/10">
                   <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -67,6 +62,27 @@ const Header = () => {
                 <DropdownMenuItem>Sign Out</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+          </div>
+        </div>
+        
+        {/* Secondary navigation */}
+        <div className="flex items-center justify-between px-4 py-1">
+          <nav className="flex">
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Personal Info</a>
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Federal</a>
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Campus</a>
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Deductions</a>
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Courses</a>
+            <a href="#" className="px-4 py-2 text-white hover:bg-white/10 rounded-t-md font-medium text-sm">Files</a>
+          </nav>
+          <div className="hidden md:flex items-center gap-2">
+            <div className="relative w-48">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 h-4 w-4" />
+              <Input 
+                placeholder="Search..." 
+                className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20"
+              />
+            </div>
           </div>
         </div>
       </div>

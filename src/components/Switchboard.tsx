@@ -1,21 +1,17 @@
 
 import React from 'react';
-import ModuleCard from './ModuleCard';
-import WidgetCard from './WidgetCard';
 import { 
   Users, 
   GraduationCap, 
-  CalendarRange, 
-  FileText, 
-  Building2, 
+  BookOpen, 
   CreditCard,
-  BookOpen,
+  FileText,
   BarChart4,
-  Settings,
-  HeartPulse,
-  UserCog,
-  BellRing
+  HelpCircle,
+  Check,
+  ArrowRightCircle
 } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Switchboard = () => {
   const handleModuleClick = (moduleName: string) => {
@@ -24,138 +20,122 @@ const Switchboard = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">AIT Information System</h1>
-        <p className="text-gray-600 dark:text-gray-300">
-          Welcome to the Accra Institute of Technology Information System. Select a module to begin.
-        </p>
-      </div>
-
-      {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <WidgetCard
-          title="Total Students"
-          value="5,842"
-          icon={<Users />}
-          color="#0056A6"
-        />
-        <WidgetCard
-          title="Academic Staff"
-          value="348"
-          icon={<GraduationCap />}
-          color="#00A8A8"
-        />
-        <WidgetCard
-          title="Active Courses"
-          value="126"
-          icon={<BookOpen />}
-          color="#F26C24"
-        />
-        <WidgetCard
-          title="Payment Success Rate"
-          value="94%"
-          icon={<CreditCard />}
-          color="#5cb85c"
-        />
-      </div>
-
-      {/* Main Modules */}
-      <h2 className="text-xl font-semibold mb-4">System Modules</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <ModuleCard
-          title="Student Management"
-          description="Register, manage, and track student information, academic records, and enrollment status."
-          icon={Users}
-          color="#0056A6"
-          accentColor="#0056A6"
-          onClick={() => handleModuleClick('Student Management')}
-        />
-        
-        <ModuleCard
-          title="Course Management"
-          description="Create, update, and manage course information, schedules, and academic requirements."
-          icon={BookOpen}
-          color="#00A8A8"
-          accentColor="#00A8A8"
-          onClick={() => handleModuleClick('Course Management')}
-        />
-        
-        <ModuleCard
-          title="Faculty Portal"
-          description="Manage faculty information, course assignments, student grading, and academic reports."
-          icon={GraduationCap}
-          color="#6f42c1"
-          accentColor="#6f42c1"
-          onClick={() => handleModuleClick('Faculty Portal')}
-        />
-        
-        <ModuleCard
-          title="Billing & Payments"
-          description="Process student payments, generate invoices, and track financial records."
-          icon={CreditCard}
-          color="#F26C24"
-          accentColor="#F26C24"
-          onClick={() => handleModuleClick('Billing & Payments')}
-        />
-        
-        <ModuleCard
-          title="Academic Calendar"
-          description="Manage and view academic schedules, events, and important dates across the institution."
-          icon={CalendarRange}
-          color="#5cb85c"
-          accentColor="#5cb85c"
-          onClick={() => handleModuleClick('Academic Calendar')}
-        />
-        
-        <ModuleCard
-          title="Reports & Analytics"
-          description="Generate comprehensive reports and analytics for academic performance and administrative review."
-          icon={BarChart4}
-          color="#FFB81C"
-          accentColor="#FFB81C"
-          onClick={() => handleModuleClick('Reports & Analytics')}
-        />
-      </div>
-
-      {/* Additional Modules */}
-      <h2 className="text-xl font-semibold mb-4">Administrative Modules</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <ModuleCard
-          title="Administration"
-          description="Access administrative functions and system management tools."
-          icon={Building2}
-          color="#d9534f"
-          accentColor="#d9534f"
-          onClick={() => handleModuleClick('Administration')}
-        />
-        
-        <ModuleCard
-          title="Document Management"
-          description="Store, retrieve, and manage institutional documents and files."
-          icon={FileText}
-          color="#0056A6"
-          accentColor="#0056A6"
-          onClick={() => handleModuleClick('Document Management')}
-        />
-        
-        <ModuleCard
-          title="System Settings"
-          description="Configure system parameters, user permissions, and application settings."
-          icon={Settings}
-          color="#6c757d"
-          accentColor="#6c757d"
-          onClick={() => handleModuleClick('System Settings')}
-        />
-        
-        <ModuleCard
-          title="Student Affairs"
-          description="Manage student welfare, counseling, and after-care services."
-          icon={HeartPulse}
-          color="#00A8A8"
-          accentColor="#00A8A8"
-          onClick={() => handleModuleClick('Student Affairs')}
-        />
+    <div className="max-w-screen-xl mx-auto px-4 py-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        {/* Main content grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4">
+          {/* Left sidebar */}
+          <div className="bg-gray-100 dark:bg-gray-700 p-4 md:p-6">
+            <nav className="space-y-2">
+              <div className="bg-ait-blue text-white rounded py-2 px-3 flex items-center">
+                <Check size={16} className="mr-2" />
+                <span className="text-sm font-medium">Getting Started</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Student Management</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Faculty Portal</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Course Management</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Billing & Payments</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Reports & Analytics</span>
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded py-2 px-3 flex items-center">
+                <ArrowRightCircle size={16} className="mr-2" />
+                <span className="text-sm font-medium">Administration</span>
+              </div>
+            </nav>
+          </div>
+          
+          {/* Main content area */}
+          <div className="col-span-3 p-6">
+            <div className="flex items-start">
+              {/* Welcome text section */}
+              <div className="flex-1 pr-6">
+                <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+                  Hi, Welcome to AIT Information System!
+                </h1>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  We've designed AIT NEXUS to be simple to use. Select an option below to begin managing your academic records, courses, or administrative tasks.
+                </p>
+                
+                <Button 
+                  className="bg-ait-blue hover:bg-ait-blue/90 text-white"
+                  onClick={() => handleModuleClick('Getting Started')}
+                >
+                  Begin
+                </Button>
+              </div>
+              
+              {/* Image section */}
+              <div className="hidden md:block">
+                <img 
+                  src="/lovable-uploads/29ce6e36-79f6-46f6-9ee3-6d0329415d10.png" 
+                  alt="AIT Students and Faculty" 
+                  className="w-64 h-auto rounded"
+                />
+              </div>
+            </div>
+            
+            {/* Quick access links */}
+            <div className="mt-12">
+              <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Manage Your Academic Records</h2>
+              <ul className="space-y-2 mb-8">
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    Track your academic progress and view your grades
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    Register for new courses and manage your schedule
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    Make payments and view your financial records
+                  </a>
+                </li>
+              </ul>
+              
+              <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Manage and Grow Your Business</h2>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    Faculty members: Manage your courses and submit grades
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    Administrative staff: Access administrative functions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-ait-blue hover:text-ait-teal flex items-center">
+                    <Check size={18} className="mr-2 text-ait-teal" />
+                    IT support: Get help with technical issues
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
