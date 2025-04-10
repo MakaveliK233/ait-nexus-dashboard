@@ -1,12 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import Switchboard from '@/components/Switchboard';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
+      <Header />
+      <main className="flex-1 pt-2 pb-8">
+        <Switchboard />
+      </main>
+      <footer className="border-t py-4 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400">
+          © {new Date().getFullYear()} Accra Institute of Technology. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 };
